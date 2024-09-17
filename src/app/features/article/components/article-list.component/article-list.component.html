@@ -1,0 +1,29 @@
+<ng-container *ngIf="loading === LoadingState.LOADING">
+    <div class="article-preview">
+        Loading articles...
+    </div>
+</ng-container>
+
+<ng-container *ngIf="loading === LoadingState.LOADED">
+    <div *ngIf="results; else noArticles">
+        <ng-container *ngFor="let article of results">
+            <app-article-preview [article]="article"></app-article-preview>
+        </ng-container>
+    </div>
+    <ng-template #noArticles>
+        No articles!
+    </ng-template>
+</ng-container>
+
+<nav>
+    <ul class="pagination">
+        <ng-container *ngFor="let page of totalPages">
+            <li class="page-item" [ngClass]="{active: page == currentPage}">
+                <button class="page-link" (click)="setPageTo(page)">
+                    {{page}}
+                </button>
+            </li>
+        </ng-container>
+    </ul>
+</nav>
+

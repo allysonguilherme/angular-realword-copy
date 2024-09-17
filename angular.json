@@ -63,7 +63,8 @@
               "browserTarget": "angular-realworld-copy:build:production"
             },
             "development": {
-              "browserTarget": "angular-realworld-copy:build:development"
+              "browserTarget": "angular-realworld-copy:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -94,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "aa2daa29-804c-4bf2-93ed-62cb71b28454"
   }
 }
